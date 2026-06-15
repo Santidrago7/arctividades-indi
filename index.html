@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividades Individuales - Multimedia</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: linear-gradient(135deg, #003366, #0059b3);
+            color: white;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            opacity: 0.95;
+        }
+
+        nav {
+            background: white;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #003366;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            color: #0074d9;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1200px;
+            margin: 35px auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title h2 {
+            color: #003366;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #4b5563;
+            font-size: 17px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            padding: 28px;
+            margin-bottom: 35px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border: 1px solid #e5e7eb;
+        }
+
+        .card h3 {
+            color: #003366;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            line-height: 1.7;
+            margin-bottom: 15px;
+            color: #374151;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            font-weight: bold;
+            padding: 7px 14px;
+            border-radius: 30px;
+            margin-bottom: 15px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+            gap: 22px;
+            margin-top: 20px;
+        }
+
+        .image-box {
+            background: #f9fafb;
+            border-radius: 14px;
+            padding: 15px;
+            border: 1px solid #d1d5db;
+        }
+
+        .image-box h4 {
+            color: #111827;
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .image-box img {
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid #cbd5e1;
+            display: block;
+        }
+
+        .video-box {
+            margin-top: 20px;
+            background: #f9fafb;
+            padding: 15px;
+            border-radius: 14px;
+            border: 1px solid #d1d5db;
+        }
+
+        .video-box h4 {
+            color: #111827;
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid #cbd5e1;
+            background: black;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+            margin-top: 18px;
+        }
+
+        .info-item {
+            background: #f1f5f9;
+            border-left: 5px solid #2563eb;
+            padding: 16px;
+            border-radius: 12px;
+        }
+
+        .info-item strong {
+            display: block;
+            color: #003366;
+            margin-bottom: 6px;
+        }
+
+        .comparison {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 18px;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .comparison th {
+            background: #003366;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .comparison td {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            padding: 12px;
+            line-height: 1.5;
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 18px;
+            background: #003366;
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .download-btn:hover {
+            background: #0059b3;
+        }
+
+        footer {
+            background: #003366;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 700px) {
+            header h1 {
+                font-size: 26px;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                display: block;
+                margin: 8px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Actividades Individuales de Multimedia</h1>
+    <p>Procesamiento de imágenes, filtro 3x3 y producción multimedia sincronizada</p>
+</header>
+
+<nav>
+    <a href="#actividad1">Clasificación de Texturas</a>
+    <a href="#actividad2">Filtro 3x3</a>
+    <a href="#actividad3">Cover Vaca Lola</a>
+</nav>
+
+<main class="container">
+
+    <section class="section-title">
+        <h2>Resultados de las Actividades Individuales</h2>
+        <p>
+            En esta página se presentan únicamente los resultados individuales desarrollados
+            para la práctica de Multimedia.
+        </p>
+    </section>
+
+    <section id="actividad1" class="card">
+        <span class="badge">Actividad Individual A</span>
+        <h3>Clasificación de Texturas tipo Satelital</h3>
+
+        <p>
+            Esta actividad consiste en analizar una imagen a nivel de píxel para diferenciar
+            superficies como césped, tierra, cemento, asfalto u otras categorías. El sistema
+            trabaja con los valores RGB de cada píxel y aplica reglas de clasificación para
+            generar un mapa visual con colores representativos.
+        </p>
+
+        <div class="info-grid">
+            <div class="info-item">
+                <strong>Herramienta utilizada</strong>
+                Visual Studio 2012 con C# Windows Forms.
+            </div>
+            <div class="info-item">
+                <strong>Método aplicado</strong>
+                Análisis RGB por píxel.
+            </div>
+            <div class="info-item">
+                <strong>Resultado obtenido</strong>
+                Mapa clasificado con porcentajes por textura.
+            </div>
+        </div>
+
+        <div class="image-grid">
+            <div class="image-box">
+                <h4>Resultado de clasificación de texturas</h4>
+                <img src="assets/img/indi.png" alt="Clasificación de texturas tipo satelital">
+            </div>
+        </div>
+
+        <table class="comparison">
+            <tr>
+                <th>Antes</th>
+                <th>Después</th>
+            </tr>
+            <tr>
+                <td>
+                    La imagen original conserva sus colores naturales y no indica de forma
+                    directa qué tipo de superficie contiene cada zona.
+                </td>
+                <td>
+                    La imagen procesada muestra un mapa clasificado donde cada superficie
+                    tiene un color representativo: césped, tierra, cemento, asfalto u otro.
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="actividad2" class="card">
+        <span class="badge">Actividad Individual B</span>
+        <h3>Filtro de Suavizado 3x3</h3>
+
+        <p>
+            En esta actividad se implementó un filtro promedio de ventana 3x3. El algoritmo
+            recorre la imagen píxel por píxel y reemplaza cada valor por el promedio de sus
+            vecinos cercanos, reduciendo el ruido visual y suavizando las transiciones de color.
+        </p>
+
+        <div class="info-grid">
+            <div class="info-item">
+                <strong>Tipo de filtro</strong>
+                Promedio de vecinos en ventana 3x3.
+            </div>
+            <div class="info-item">
+                <strong>Objetivo</strong>
+                Reducir ruido y suavizar cambios bruscos de color.
+            </div>
+            <div class="info-item">
+                <strong>Salida generada</strong>
+                Imagen suavizada exportada desde la aplicación.
+            </div>
+        </div>
+
+        <div class="image-grid">
+            <div class="image-box">
+                <h4>Resultado del filtro de suavizado 3x3</h4>
+                <img src="assets/img/indi2.png" alt="Filtro de suavizado 3x3">
+            </div>
+        </div>
+
+        <table class="comparison">
+            <tr>
+                <th>Antes</th>
+                <th>Después</th>
+            </tr>
+            <tr>
+                <td>
+                    La imagen presenta ruido visual y variaciones fuertes entre píxeles vecinos.
+                </td>
+                <td>
+                    El filtro promedio 3x3 suaviza la imagen y mejora la continuidad visual
+                    entre zonas cercanas.
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="actividad3" class="card">
+        <span class="badge">Actividad Individual C</span>
+        <h3>Cover de “La Vaca Lola” con Animación Sincronizada</h3>
+
+        <p>
+            Esta actividad consiste en vincular un audio de cover con una animación. Se utilizó
+            un audio propio y se generó una animación con personajes 2D, donde los movimientos,
+            luces y efectos visuales reaccionan al ritmo de la música.
+        </p>
+
+        <div class="info-grid">
+            <div class="info-item">
+                <strong>Herramienta principal</strong>
+                Google Colab con Python.
+            </div>
+            <div class="info-item">
+                <strong>Análisis de audio</strong>
+                Energía RMS y detección de beats.
+            </div>
+            <div class="info-item">
+                <strong>Producto final</strong>
+                Video MP4 con audio y animación sincronizada.
+            </div>
+        </div>
+
+        <div class="video-box">
+            <h4>Video final del cover animado</h4>
+            <video controls>
+                <source src="assets/video/cover_vaca_lola_animado.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+        </div>
+
+        <div class="image-grid">
+            <div class="image-box">
+                <h4>Fotograma del video animado</h4>
+                <img src="assets/img/frame_cover_vaca_lola.png" alt="Fotograma del cover de La Vaca Lola">
+            </div>
+
+            <div class="image-box">
+                <h4>Análisis de ritmo del audio</h4>
+                <img src="assets/img/analisis_ritmo_vaca_lola.png" alt="Análisis de ritmo del audio">
+            </div>
+        </div>
+
+        <table class="comparison">
+            <tr>
+                <th>Antes</th>
+                <th>Después</th>
+            </tr>
+            <tr>
+                <td>
+                    Solo se contaba con el audio del cover sin una representación visual sincronizada.
+                </td>
+                <td>
+                    El audio fue integrado en una producción multimedia con animación,
+                    movimiento, luces y efectos sincronizados al ritmo.
+                </td>
+            </tr>
+        </table>
+    </section>
+
+</main>
+
+<footer>
+    <p>UMSA Digital / Multimedia - Actividades Individuales</p>
+</footer>
+
+</body>
+</html>
